@@ -1,0 +1,28 @@
+services:
+  # rest-api:
+  #   build:
+  #     context: .
+  #     target: development
+  #   volumes:
+  #     - ./:/app
+  #   working_dir: /usr/src/app
+  #   ports:
+  #     - 3000:3000
+  #     - 9229:9229
+  #   command: yarn start:debug
+  api:
+    container_name: api
+    build:
+      context: .
+      target: development
+    volumes:
+      - '.:/app'
+    command: yarn start:debug
+    ports:
+      - 4000:4000
+      - 9229:9229
+#     networks:
+#       - network
+# networks: 
+#   network:
+#     driver: bridge
